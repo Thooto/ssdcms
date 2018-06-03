@@ -2,6 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 let app = express();
+app.use(express.json());
+app.use(express.urlencoded());
+
 require('./lib/config')(app);
 require('./lib/routes')(app);
 

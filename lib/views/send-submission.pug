@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title Conference Management System
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    body
+        h2 Send submission
+        form(action="send-submission" method="post")
+            input(name="email" placeholder="Presenter email")
+            input(name="title" placeholder="Submission title")
+            input(name="affiliation" placeholder="Affiliation")
+            input(name="abstract" placeholder="Abstract")
+            input(name="authors" placeholder="Authors")
+            input(type="submit" value="Send submission")
