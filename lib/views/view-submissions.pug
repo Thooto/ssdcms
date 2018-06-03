@@ -9,3 +9,4 @@ html(lang="en")
         ul
             each submission in submissions
                 li= submission.title
+                    a(href="view-submission-details?id=" + submission._id) View details

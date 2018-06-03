@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title Conference Management System
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    body
+        h2 Title: #{submission.title}
+        a(href="modify-submission?id=" + submission._id) Modify submission
+        p= submission.abstract
+        p= presenter.name
+        h2 Authors
+        ul
+            each author in authors
+                li= author.name

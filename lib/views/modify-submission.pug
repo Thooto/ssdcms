@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title Conference Management System
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    body
+        h2 Modify submission named #{submission.title}
+        form(action="modify-submission" method="post")
+            input(name="id" value=submission._id style="display: none")
+            input(name="title" placeholder="Title" value=submission.title)
+            input(name="affiliation" placeholder="Affiliation")
+            input(name="abstract" placeholder="Abstract" value=submission.abstract)
+            input(name="authors" placeholder="Authors")
+            input(type="submit" value="Modify submission")
