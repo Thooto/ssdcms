@@ -1,11 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-let app = express();
-app.use(express.json());
-app.use(express.urlencoded());
+const app = express();
 
-require('./lib/config')(app);
+require('./lib/config')(app, express);
 require('./lib/routes')(app);
 
 mongoose.connect('mongodb://cmsapp:cmspwd5734@ds159509.mlab.com:59509/cmsdb', (err) => {
