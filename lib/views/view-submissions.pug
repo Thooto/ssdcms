@@ -8,5 +8,5 @@ html(lang="en")
         h2 Submissions for #{presenter.name}
         ul
             each submission in submissions
-                li= submission.title
+                li= submission.title + ' ' + submission._id + ' '
                     a(href="view-submission-details?id=" + submission._id) View details

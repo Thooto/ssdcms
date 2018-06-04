@@ -9,6 +9,7 @@ html(lang="en")
         a(href="modify-submission?id=" + submission._id) Modify submission
         p= submission.abstract
         p= presenter.name
+        p= submission.reviewer
         h2 Authors
         ul
             each author in authors

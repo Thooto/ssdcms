@@ -5,13 +5,14 @@ html(lang="en")
         title Conference Management System
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
     body
-        h2 Add a presenter
-        form(action="add-presenter" method="post")
+        h2 Add a reviewer
+        form(action="add-reviewer" method="post")
             input(name="name" placeholder="Name")
             input(name="email" placeholder="Email")
             input(name="affiliation" placeholder="Affiliation")
+            input(name="submission" placeholder="Submission id")
             input(type="submit" value="Add presenter")
-        h2 List of registered presenters
+        h2 List of registered reviewers
         ul
-            each presenter in presenters
-                li= presenter.name
+            each reviewer in reviewers
+                li= reviewer.name
