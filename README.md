@@ -5,14 +5,14 @@ How to proceed:
 
 have git installed, open terminal
 
-cd to some folder, type:
+to clone the project when you are in some folder, type:
 git clone https://www.github.com/Thooto/ssdcms.git
 
-cd to the folder:
+to go to the newly created folder, type:
 cd ssdcms
 
-install dependencies, type:
+to install dependencies, type:
 npm install
 
-start server, type:
+to start the server, type:
 node
