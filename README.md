@@ -3,7 +3,7 @@ Conference Management System for SSD course
 
 How to proceed:
 
-have git installed, open terminal
+have git and nodejs installed, open terminal
 
 clone the project when you are in some folder (type: git clone https://www.github.com/Thooto/ssdcms.git)
 
