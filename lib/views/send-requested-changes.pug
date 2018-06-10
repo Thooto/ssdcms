@@ -1,0 +1,13 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title Conference Management System
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    body
+        a(href="/") index
+        h2 Send requested changes
+        form(action="send-requested-changes" method="post")
+            input(name="submission" placeholder="Submission id")
+            textarea(name="review" placeholder="Review")
+            input(type="submit" value="Send requested changes")

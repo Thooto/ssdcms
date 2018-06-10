@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Conference Management System
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    style.
+      nav {
+        display: flex;
+        flex-flow: column;
+      }
+      
+      a {
+        margin: 20px;
+      }
+  body
+    h2 Conference management system
+    
+    nav
+      a(href="/add-presenter") add presenter (manager view)
+      a(href="/add-reviewer") add reviewer (manager view)
+      br
+      a(href="/send-submission") send a submission (presenter)
+      a(href="/send-requested-changes") send requested changes (reviewer)
+      br
+      a(href="/view-submission-details") view submission details (?id=submissionid)
+      a(href="/view-submissions") view submissions (?email=presenter@email)
+      a(href="/modify-submission") modify submission (?id=submissionid)
+                

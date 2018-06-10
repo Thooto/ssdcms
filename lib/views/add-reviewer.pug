@@ -5,14 +5,15 @@ html(lang="en")
         title Conference Management System
         meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
     body
-        h2 Add a reviewer
+        a(href="/") index
+        h2 Add a reviewer for a specific submission
         form(action="add-reviewer" method="post")
             input(name="name" placeholder="Name")
             input(name="email" placeholder="Email")
             input(name="affiliation" placeholder="Affiliation")
             input(name="submission" placeholder="Submission id")
-            input(type="submit" value="Add presenter")
+            input(type="submit" value="Add reviewer")
         h2 List of registered reviewers
         ul
             each reviewer in reviewers
-                li= reviewer.name
+                li= reviewer.name + ' ________ ' + reviewer.email

@@ -5,11 +5,14 @@ html(lang="en")
         title Conference Management System
         meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
     body
+        a(href="/") index
         h2 Title: #{submission.title}
         a(href="modify-submission?id=" + submission._id) Modify submission
         p= submission.abstract
         p= presenter.name
         p= submission.reviewer
+        h2 Feedback
+        p= feedback.review
         h2 Authors
         ul
             each author in authors
