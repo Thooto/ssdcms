@@ -11,4 +11,4 @@ then go to the newly created folder (type: cd ssdcms)
 
 then install dependencies (type: npm install)
 
-then start the server (type: node)
+then start the server (type: node index.js)
