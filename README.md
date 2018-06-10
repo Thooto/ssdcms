@@ -3,16 +3,12 @@ Conference Management System for SSD course
 
 How to proceed:
 
-have git installed, open terminal
+have git and nodejs installed, open terminal
 
-cd to some folder, type:
-git clone https://www.github.com/Thooto/ssdcms.git
+clone the project when you are in some folder (type: git clone https://www.github.com/Thooto/ssdcms.git)
 
-cd to the folder:
-cd ssdcms
+then go to the newly created folder (type: cd ssdcms)
 
-install dependencies, type:
-npm install
+then install dependencies (type: npm install)
 
-start server, type:
-node
+then start the server (type: node index.js)
