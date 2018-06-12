@@ -5,8 +5,9 @@ html(lang="en")
     title Conference Management System
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
   body
-    h2 Conference management system index page
-    p=attendant && "Welcome, " + attendant.name
-    a(href="/login") Log in
-    a(href="/register") Register
+    h2 Conference management system login page
+    form(action="/login" method="post")
+      input(name="email" type="email" placeholder="E-mail")
+      input(type="submit" value="Log in")
+    p=message
                 
