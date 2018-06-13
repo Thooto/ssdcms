@@ -1,0 +1,10 @@
+mixin cmsnav(title)
+  header
+    div
+      h3=title
+      nav
+        a(href="/") Index
+        a(href=attendant ? "/attendant" : "/login")=attendant ? "Profile" : "Log in"
+        if attendant
+          a(href="/send-submission") Send submission
+          a(href="/logout") Log out
