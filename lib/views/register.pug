@@ -1,17 +1,21 @@
+include templates/navigation.pug
+
 doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
     title Conference Management System
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet" href="/style.min.css")
   body
-    h2 Conference management system registration page
-    form(action="/register" method="post")
-      input(name="name" type="text" placeholder="Name" value=body && body.name)
-      input(name="email" type="email" placeholder="E-mail" value=body && body.email)
-      input(name="affiliation" type="text" placeholder="Affiliation" value=body && body.affiliation)
-      select(name="type")
-        option(value="student") Student
-        option(value="other") Other
-      input(type="submit" value="Register")
-    p=message
+    +cmsnav("Register page")
+    main
+      form(action="/register" method="post")
+        input(name="name" type="text" placeholder="Name" value=body && body.name)
+        input(name="email" type="email" placeholder="E-mail" value=body && body.email)
+        input(name="affiliation" type="text" placeholder="Affiliation" value=body && body.affiliation)
+        select(name="type")
+          option(value="student") Student
+          option(value="other") Other
+        input(type="submit" value="Register")
+      p=message

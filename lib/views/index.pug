@@ -1,12 +1,14 @@
+include templates/navigation.pug
+
 doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
     title Conference Management System
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet" href="/style.min.css")
   body
-    h2 Conference management system index page
-    p=attendant && "Welcome, " + attendant.name
-    a(href="/login") Log in
-    a(href="/register") Register
+    +cmsnav("Index page")
+    main
+      p=attendant ? "Welcome, " + attendant.name : "Welcome to conference management system. Please register as an attendant or log in"
                 

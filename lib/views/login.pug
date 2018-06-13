@@ -1,13 +1,17 @@
+include templates/navigation.pug
+
 doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
     title Conference Management System
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet" href="/style.min.css")
   body
-    h2 Conference management system login page
-    form(action="/login" method="post")
-      input(name="email" type="email" placeholder="E-mail")
-      input(type="submit" value="Log in")
-    p=message
+    +cmsnav("Login page")
+    main
+      form(action="/login" method="post")
+        input(name="email" type="email" placeholder="E-mail")
+        input(type="submit" value="Log in")
+      p=message
                 
