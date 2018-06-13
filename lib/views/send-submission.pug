@@ -12,7 +12,7 @@ html(lang="en")
     
     main
       h3 Send a submission
-      form(action="/attendant/" + attendant.email + "/send-submission" enctype="multipart/form-data" method="post")
+      form(action="/send-submission" enctype="multipart/form-data" method="post")
         input(name="title" placeholder="Title" value=submission.title required)
         textarea(name="abstract" value=submission.abstract placeholder="Abstract" required)= submission.title
         input(name="authors" placeholder="Authors" required)

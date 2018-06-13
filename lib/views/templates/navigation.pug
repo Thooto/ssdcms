@@ -4,7 +4,7 @@ mixin cmsnav(title)
       h3=title
       nav
         a(href="/") Index
-        a(href=attendant ? "/attendant/" + attendant.email : "/login")=attendant ? "Profile" : "Log in"
+        a(href=attendant ? "/attendant" : "/login")=attendant ? "Profile" : "Log in"
         if attendant
-          a(href="/attendant/" + attendant.email + "/send-submission" ) Send submission
+          a(href="/send-submission") Send submission
           a(href="/logout") Log out
