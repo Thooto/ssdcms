@@ -1,10 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const passport = require('passport');
+// const passport = require('passport');
 
 const app = express();
-require('./lib/config')(app, passport);
-require('./lib/routes')(app, passport);
+require('./lib/config')(app); //, passport);
+require('./lib/routes')(app); //, passport);
 
 
 mongoose.connect('mongodb://cmsapp:cmspwd5734@ds159509.mlab.com:59509/cmsdb', (err) => {
