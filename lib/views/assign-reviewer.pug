@@ -9,10 +9,10 @@ html(lang="en")
       main
         h3 Admin view - assign a reviewer to a submission
         form(action="/admin/assign-reviewer" method="post")
-          input(name="name" placeholder="Name")
-          input(name="email" placeholder="Email")
-          input(name="affiliation" placeholder="Affiliation")
-          input(name="submission" placeholder="Submission ids")
+          input(name="name" placeholder="Name" required)
+          input(name="email" placeholder="Email" required)
+          input(name="affiliation" placeholder="Affiliation" required)
+          input(name="submission" placeholder="Submission ids" required)
           input(type="submit" value="Assign reviewer")
         h3 List of registered reviewers
         ul

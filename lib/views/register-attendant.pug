@@ -12,10 +12,10 @@ html(lang="en")
     main
       h3 Admin view - register a new attendant
       form(action="/admin/register-attendant" method="post")
-        input(name="name" type="text" placeholder="Name" value=body && body.name)
-        input(name="email" type="email" placeholder="E-mail" value=body && body.email)
-        input(name="affiliation" type="text" placeholder="Affiliation" value=body && body.affiliation)
-        select(name="type")
+        input(name="name" type="text" placeholder="Name" value=body && body.name required)
+        input(name="email" type="email" placeholder="E-mail" value=body && body.email required)
+        input(name="affiliation" type="text" placeholder="Affiliation" value=body && body.affiliation required)
+        select(name="type" required)
           option(value="student") Student
           option(value="other") Other
         input(type="submit" value="Register attendant")

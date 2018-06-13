@@ -11,7 +11,11 @@ html(lang="en")
     +cmsnav("Send submission page")
     
     main
-      p= attendant.name
-      p= attendant.email
-      p= attendant.affiliation
+      h3 Send a submission
+      form(action="/attendant/" + attendant.email + "/send-submission" enctype="multipart/form-data" method="post")
+        input(name="title" placeholder="Title" value=submission.title required)
+        textarea(name="abstract" value=submission.abstract placeholder="Abstract" required)= submission.title
+        input(name="authors" placeholder="Authors" required)
+        input(name="attachment" type="file" required)
+        input(type="submit" value="Send submission")
                 
