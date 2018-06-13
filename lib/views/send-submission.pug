@@ -15,7 +15,17 @@ html(lang="en")
       form(action="/send-submission" enctype="multipart/form-data" method="post")
         input(name="title" placeholder="Title" value=submission.title required)
         textarea(name="abstract" value=submission.abstract placeholder="Abstract" required)= submission.title
-        input(name="authors" placeholder="Authors" required)
+        button(type="button" onclick="addAuthor()") Add author
+        div#authors
+          div#author
+            input(name="authors[names]" placeholder="Author name" required)
+            input(name="authors[emails]" type="email" placeholder="Author email" required)
+            input(name="authors[affiliations]" placeholder="Author affiliation" required)
         input(name="attachment" type="file" required)
         input(type="submit" value="Send submission")
-                
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+      script.
+        function addAuthor() {
+          console.log('test')
+          $('#author').clone().appendTo('#authors')
+        }
