@@ -1,0 +1,22 @@
+include templates/navigation.pug
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Conference Management System
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet" href="/style.min.css")
+  body
+    //+cmsnav("Register attendant admin page")
+    main
+      h3 Admin view - register a new attendant
+      form(action="/admin/register-attendant" method="post")
+        input(name="name" type="text" placeholder="Name" value=body && body.name required)
+        input(name="email" type="email" placeholder="E-mail" value=body && body.email required)
+        input(name="affiliation" type="text" placeholder="Affiliation" value=body && body.affiliation required)
+        select(name="type" required)
+          option(value="student") Student
+          option(value="other") Other
+        input(type="submit" value="Register attendant")
+      p=message
