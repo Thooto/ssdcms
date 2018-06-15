@@ -1,0 +1,34 @@
+include templates/navigation.pug
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Conference Management System
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet" href="/style.min.css")
+  body
+    +cmsnav("Index page")
+    main
+    h1=submission.title
+    br
+    p=submission.abstract
+    br
+    p="Status: "+ submission.status
+    br
+    h2="Authors:"
+    br
+    ul
+      each author in authors
+        li=author.name
+    br
+    a(href="/files/"+submission.attachment) File
+    br
+    p="Feedback: "+ feedback.review
+    br
+    a(href="/modify/"+submission._id) Modify
+    br
+    p="TODO: Show feedback only if status != sent. "
+    p="TODO: Show attachment of feedback only if it exists"
+    p="TODO: Link to the file does not work "
+    p="TODO: Give link to /modify/_id it if status allows it "

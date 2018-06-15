@@ -10,5 +10,10 @@ html(lang="en")
   body
     +cmsnav("Index page")
     main
-      p=attendant ? "Welcome, " + attendant.name : "Welcome to conference management system. Please log in"
-                
+    p="Welcome, " + attendant.name +" "
+    br
+    ul
+      each sub in submissions
+        li="->"+sub.title
+        a(href="/details/"+sub._id) See
+        br

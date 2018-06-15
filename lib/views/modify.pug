@@ -1,0 +1,32 @@
+include templates/navigation.pug
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Conference Management System
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet" href="/style.min.css")
+  body
+    +cmsnav("Modify submission page")
+    
+    main
+      h3 Modify a submission
+      form(action="/modify/"+submission._id enctype="multipart/form-data" method="post")
+        input(name="title" placeholder="Title" value=submission.title content=submission.title required) 
+        textarea(name="abstract" value=submission.abstract placeholder="Abstract" required)=submission.abstract
+        button(type="button" onclick="addAuthor()") Add author
+        div#authors
+          each author in authors
+            div#author
+              input(name="authors[names]" placeholder="Author name" content=author.name required)
+              input(name="authors[emails]" type="email" placeholder="Author email" content=author.email required)
+              input(name="authors[affiliations]" placeholder="Author affiliation" content=author.affiliation required)
+        input(name="attachment" type="file" required)
+        input(type="submit" value="Modify submission")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+        script.
+          function addAuthor() {
+            console.log('test')
+            $('#author').clone().appendTo('#authors')
+          }
