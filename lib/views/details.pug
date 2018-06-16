@@ -22,7 +22,7 @@ html(lang="en")
       each author in authors
         li=author.name
     br
-    a(href="/files/"+submission.attachment) File
+    a(href="/files/"+submission.attachment download) File
     br
     if feedback.review != 'empty'
         p="Feedback: "+ feedback.review
