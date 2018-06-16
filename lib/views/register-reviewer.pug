@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        title Conference Management System
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        link(rel="stylesheet" href="/style.min.css")
+    body
+      main
+        h3 Admin view - Register a reviewer
+        form(action="/admin/register-reviewer" method="post")
+          input(name="name" placeholder="Name" required)
+          input(name="email" placeholder="Email" required)
+          input(name="affiliation" placeholder="Affiliation" required)
+          input(type="submit" value="Register reviewer")
+        h3 List of registered reviewers
+        ul
+          each reviewer in reviewers
+            li= reviewer.name + ' | ' + reviewer.email + ' | ' + reviewer._id
+        p=message
