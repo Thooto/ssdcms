@@ -24,11 +24,27 @@ html(lang="en")
     br
     a(href="/files/"+submission.attachment) File
     br
-    p="Feedback: "+ feedback.review
+    if feedback.review != 'empty'
+        p="Feedback: "+ feedback.review
     br
-    a(href="/modify/"+submission._id) Modify
+    hr
+    if role == 'attendant' && submission.status == 'sent'
+        a(href="/modify/"+submission._id) Modify
+    if role == 'attendant' && submission.status == 'request_changes'
+         a(href="/modify/"+submission._id) Change
+
+    if role == 'reviewer' && submission.status == 'sent'
+        h2 Give review
+        form(action="/review/"+submission._id method="post")
+          textarea(name="review" required)
+          select(name='status' required)
+            option(value='accepted') Accept
+            option(value='request_changes') Request Changes
+            option(value='rejected') Reject
+          input(name="attachment" type="file")
+          input(type="submit" value="Send")
     br
-    p="TODO: Show feedback only if status != sent. "
-    p="TODO: Show attachment of feedback only if it exists"
+
+    p="TODO: Show attachment of feedback"
     p="TODO: Link to the file does not work "
     p="TODO: Give link to /modify/_id it if status allows it "

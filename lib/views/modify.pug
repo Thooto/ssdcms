@@ -19,14 +19,21 @@ html(lang="en")
         div#authors
           each author in authors
             div#author
-              input(name="authors[names]" placeholder="Author name" content=author.name required)
-              input(name="authors[emails]" type="email" placeholder="Author email" content=author.email required)
-              input(name="authors[affiliations]" placeholder="Author affiliation" content=author.affiliation required)
+              input(name="authors[names]" placeholder="Author name" value=author.name required)
+              input(name="authors[emails]" type="email" placeholder="Author email" value=author.email required)
+              input(name="authors[affiliations]" placeholder="Author affiliation" value=author.affiliation required)
         input(name="attachment" type="file" required)
         input(type="submit" value="Modify submission")
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-        script.
-          function addAuthor() {
-            console.log('test')
-            $('#author').clone().appendTo('#authors')
-          }
+
+
+      div(style="display: none;")
+        div#author_template
+          input(name="authors[names]" placeholder="Author name" required)
+          input(name="authors[emails]" type="email" placeholder="Author email" required)
+          input(name="authors[affiliations]" placeholder="Author affiliation" required)
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+      script.
+        function addAuthor() {
+          console.log('test')
+          $('#author_template').clone().appendTo('#authors')
+        }
