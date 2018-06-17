@@ -13,24 +13,24 @@ html(lang="en")
     main
       h3 Modify a submission
       form(action="/modify/"+submission._id enctype="multipart/form-data" method="post")
-        input(name="title" placeholder="Title" value=submission.title content=submission.title required) 
-        textarea(name="abstract" value=submission.abstract placeholder="Abstract" required)=submission.abstract
+        input(name="title" placeholder="Title" maxlength="100" value=submission.title content=submission.title required) 
+        textarea(name="abstract" maxlength="5000" value=submission.abstract placeholder="Abstract" required)=submission.abstract
         button(type="button" onclick="addAuthor()") Add author
         div#authors
           each author in authors
             div#author
-              input(name="authors[names]" placeholder="Author name" value=author.name required)
-              input(name="authors[emails]" type="email" placeholder="Author email" value=author.email required)
-              input(name="authors[affiliations]" placeholder="Author affiliation" value=author.affiliation required)
-        input(name="attachment" type="file" required)
+              input(name="authors[names]" maxlength="100" placeholder="Author name" value=author.name maxlength="100" required)
+              input(name="authors[emails]" maxlength="100" type="email" placeholder="Author email" value=author.email required)
+              input(name="authors[affiliations]" maxlength="100" placeholder="Author affiliation" value=author.affiliation required)
+        input(name="attachment" type="file" accept="application/pdf" required)
         input(type="submit" value="Modify submission")
 
 
       div(style="display: none;")
         div#author_template
-          input(name="authors[names]" placeholder="Author name" required)
-          input(name="authors[emails]" type="email" placeholder="Author email" required)
-          input(name="authors[affiliations]" placeholder="Author affiliation" required)
+          input(name="authors[names]" maxlength="100" placeholder="Author name" required)
+          input(name="authors[emails]" maxlength="100" type="email" placeholder="Author email" required)
+          input(name="authors[affiliations]" maxlength="100" placeholder="Author affiliation" required)
       script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
       script.
         function addAuthor() {

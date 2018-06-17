@@ -36,12 +36,12 @@ html(lang="en")
     if role == 'reviewer' && submission.status == 'sent'
         h2 Give review
         form(action="/review/"+submission._id enctype="multipart/form-data" method="post")
-          textarea(name="review" required)
+          textarea(name="review" maxlength="5000"  required)
           select(name='status' required)
             option(value='accepted') Accept
             option(value='request_changes') Request Changes
             option(value='rejected') Reject
-          input(name="attachment" type="file")
+          input(name="attachment" accept="application/pdf" type="file")
           input(type="submit" value="Send")
     br
 
