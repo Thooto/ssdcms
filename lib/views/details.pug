@@ -35,7 +35,7 @@ html(lang="en")
 
     if role == 'reviewer' && submission.status == 'sent'
         h2 Give review
-        form(action="/review/"+submission._id method="post")
+        form(action="/review/"+submission._id enctype="multipart/form-data" method="post")
           textarea(name="review" required)
           select(name='status' required)
             option(value='accepted') Accept

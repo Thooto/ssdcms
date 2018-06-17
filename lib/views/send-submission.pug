@@ -13,6 +13,9 @@ html(lang="en")
     main
       h3 Send a submission
       form(action="/send-submission" enctype="multipart/form-data" method="post")
+        select(name="type" required)
+          option(value="paper") Paper
+          option(value="poster") Poster
         input(name="title" placeholder="Title" value=submission.title required)
         textarea(name="abstract" value=submission.abstract placeholder="Abstract" required)= submission.title
         button(type="button" onclick="addAuthor()") Add author
