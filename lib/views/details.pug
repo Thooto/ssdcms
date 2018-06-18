@@ -24,8 +24,11 @@ html(lang="en")
     br
     a(href="/files/"+submission.attachment download) File
     br
+    hr
     if feedback.review != 'empty'
         p="Feedback: "+ feedback.review
+        if feedback.attachment != ''
+            a(href="/files/"+feedback.attachment) Attachment
     br
     hr
     if role == 'attendant' && submission.status == 'sent'
@@ -44,7 +47,3 @@ html(lang="en")
           input(name="attachment" accept="application/pdf" type="file")
           input(type="submit" value="Send")
     br
-
-    p="TODO: Show attachment of feedback"
-    p="TODO: Link to the file does not work "
-    p="TODO: Give link to /modify/_id it if status allows it "

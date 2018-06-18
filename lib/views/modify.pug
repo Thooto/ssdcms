@@ -19,7 +19,7 @@ html(lang="en")
         div#authors
           each author in authors
             div#author
-              input(name="authors[names]" maxlength="100" placeholder="Author name" value=author.name maxlength="100" required)
+              input(name="authors[names]" maxlength="100" placeholder="Author name" value=author.name required)
               input(name="authors[emails]" maxlength="100" type="email" placeholder="Author email" value=author.email required)
               input(name="authors[affiliations]" maxlength="100" placeholder="Author affiliation" value=author.affiliation required)
         input(name="attachment" type="file" accept="application/pdf" required)
